@@ -19,16 +19,16 @@ jobs:
         dotnet-version: 6.0.x
         # sERVER
     - name: Restore dependencies MobileChat.Server
-      run: dotnet src/MobileChat.Server restore
+      run: dotnet src/MobileChat.Server/MobileChat.Server.csproj restore
     - name: Build MobileChat.Server
-      run: dotnet src/MobileChat.Server build --no-restore
+      run: dotnet src/MobileChat.Server/MobileChat.Server.csproj build --no-restore
     - name: Test MobileChat.Server
-      run: dotnet src/MobileChat.Server test --no-build --verbosity normal
+      run: dotnet src/MobileChat.Server/MobileChat.Server.csproj test --no-build --verbosity normal
       
       # MAUI
     - name: Restore dependencies MobileChat.Server
-      run: dotnet src/MobileChat.MAUI restore
+      run: dotnet src/MobileChat.MAUI/MobileChat.MAUI.csproj restore
     - name: Build MobileChat.MAUI
-      run: dotnet src/MobileChat.MAUI build --no-restore
+      run: dotnet src/MobileChat.MAUI/MobileChat.MAUI.csproj build --no-restore
     - name: Test MobileChat.MAUI
-      run: dotnet src/MobileChat.MAUI test --no-build --verbosity normal
+      run: dotnet src/MobileChat.MAUI/MobileChat.MAUI.csproj test --no-build --verbosity normal
