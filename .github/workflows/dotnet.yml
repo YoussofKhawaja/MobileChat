@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      working-directory: ./src/MobileChat.Server
+      working-directory: ./src/MobileChat.MAUI
       run: dotnet restore
     - name: Build
-      working-directory: ./src/MobileChat.Server
+      working-directory: ./src/MobileChat.MAUI
       run: dotnet build --no-restore
     - name: Test
-      working-directory: ./src/MobileChat.Server
+      working-directory: ./src/MobileChat.MAUI
       run: dotnet test --no-build --verbosity normal
