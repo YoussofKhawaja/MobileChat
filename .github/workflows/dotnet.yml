@@ -1,4 +1,4 @@
-name: CI Build
+name: Dotnet builds
 
 on:
   push:
@@ -44,7 +44,7 @@ jobs:
         run: dotnet publish src/MobileChat.MAUI/MobileChat.MAUI.csproj -c Release -f net6.0-android --no-restore
 
       - name: Upload Android Artifact
-        uses: aactions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: MobileChat-android-ci-build
           path: src/MobileChat.MAUI/bin/Release/net6.0-android/*Signed.a*
