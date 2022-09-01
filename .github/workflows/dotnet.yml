@@ -17,9 +17,18 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet src restore
-    - name: Build
-      run: dotnet src build --no-restore
-    - name: Test
-      run: dotnet src test --no-build --verbosity normal
+        # sERVER
+    - name: Restore dependencies MobileChat.Server
+      run: dotnet src/MobileChat.Server restore
+    - name: Build MobileChat.Server
+      run: dotnet src/MobileChat.Server build --no-restore
+    - name: Test MobileChat.Server
+      run: dotnet src/MobileChat.Server test --no-build --verbosity normal
+      
+      # MAUI
+    - name: Restore dependencies MobileChat.Server
+      run: dotnet src/MobileChat.MAUI restore
+    - name: Build MobileChat.MAUI
+      run: dotnet src/MobileChat.MAUI build --no-restore
+    - name: Test MobileChat.MAUI
+      run: dotnet src/MobileChat.MAUI test --no-build --verbosity normal
