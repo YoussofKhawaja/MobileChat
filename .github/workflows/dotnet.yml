@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+    - name: Workload estore
+      working-directory: ./src/MobileChat.MAUI
+      run: dotnet workload restore
     - name: Restore dependencies.
       working-directory: ./src/MobileChat.MAUI
       run: dotnet restore
