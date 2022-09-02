@@ -99,13 +99,13 @@ jobs:
         run: dotnet restore src/MobileChat.MAUI/MobileChat.MAUI.csproj
 
       - name: Build MAUI iOS
-        run: dotnet build src/MobileChat.MAUI/MobileChat.MAUI.csproj -c Release -f net6.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=True
+        run: dotnet build src/MobileChat.MAUI/MobileChat.MAUI.csproj -c Release -f net6.0-ios --no-restore /p:ArchiveOnBuild=True
 
       - name: Upload iOS Artifact
         uses: actions/upload-artifact@v3
         with:
           name: MobileChat-ios-ci-build
-          path: src/MobileChat.MAUI/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
+          path: src/MobileChat.MAUI/bin/Release/net6.0-ios/iossimulator-x64/**/*.ipa
 
 # MAUI MacCatalyst Build
   build-mac:
